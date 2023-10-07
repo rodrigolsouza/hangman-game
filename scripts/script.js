@@ -14,6 +14,7 @@ const dictonaire=['louco','preto','bicho','verde','chuva','manha','noite','tarde
 
 //------------------------------Functions call-----------------------------------------------
 
+generateKeyboard();
 secretWord=sortWord(dictonaire);
 startGame(secretWord);
 
@@ -30,9 +31,7 @@ function searchLetter(letter, splittedSecretWord){
             secretWordSize-=1;
             isLetter=true;
         }
-
     }
-
     if(isLetter==false){
         attempts--;
         wrongLetters.push(letter);
@@ -85,5 +84,15 @@ function startGame(secretWord){
 
 }
 
+function generateKeyboard() {
+    const mainElement = document.querySelector("#keyboard");
+  
+    for (let index = 65; index < 91; index++) {
+      const character = String.fromCharCode(index)
+      const buttonElement = `<button id="${character}" onclick="encontrarLetra('${character}')" type="button" class="btn btn-primary">${character}</button>`
+  
+      mainElement.innerHTML += buttonElement;
+    }
+  }
 
 
