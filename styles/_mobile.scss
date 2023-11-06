@@ -1,0 +1,22 @@
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+
+  main {
+    flex-direction: column;
+    padding: 1rem;
+    margin: 1rem;
+    gap: 1rem;
+  }
+
+  .left-side {
+    width: 250px;
+  }
+
+  .secret-word-ul {
+    li {
+      min-width: 30px;
+    }
+  }
+}
